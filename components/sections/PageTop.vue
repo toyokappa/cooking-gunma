@@ -1,74 +1,38 @@
 <template lang="pug">
-  #pageTop
-    hooper(:settings="hooperSettings")
-      slide
-        .page-top(v-lazy:backgroundImage="topImage1")
-          .title-area
-            .title-lg Learn de Leon
-            .subtitle 「やる」だけじゃない、思考力を育てる
-      slide
-        .page-top(v-lazy:backgroundImage="topImage2")
-          .title-area
-            .title-sm 教育を「エンタメ」に
-            .subtitle Education to Entertainment
-      hooper-pagination(slot="hooper-addons")
+  .welcome
+    #pageTop.page-top(v-lazy:backgroundImage="topImage")
+      .title-area
+        .title-lg Gunma Cooking Club
+        .subtitle 誰でも気軽に楽しくお料理を
+      .user-icon(v-lazy:backgroundImage="userIcon")
+    #profile.profile
+      .name 松井 なおこ
+      .name-alpha Matsui Naoko
+      .job-title patissier, cooking specialist
 </template>
 
 <script>
-import { Hooper, Slide, Pagination as HooperPagination } from "hooper";
-import "hooper/dist/hooper.css";
-import topImage1 from "~/assets/images/top_image.jpg";
-import topImage2 from "~/assets/images/top_image2.jpg";
+import topImage from "~/assets/images/top_image.jpg";
+import userIcon from "~/assets/images/user_icon.jpg";
 
 export default {
-  components: {
-    Hooper,
-    Slide,
-    HooperPagination
-  },
   data() {
     return {
-      hooperSettings: {
-        itemsToShow: 1,
-        infiniteScroll: true,
-        autoPlay: true,
-        playSpeed: 7000,
-        transition: 750,
-        hoverPause: false,
-        mouseDrag: false,
-        touchDrag: false,
-        shortDrag: false,
-        wheelControl: false
-      },
-      topImage1,
-      topImage2
+      topImage,
+      userIcon
     };
   }
 };
 </script>
 
-<style lang="sass">
-.hooper
-  .hooper-pagination
-    .hooper-indicators
-      .hooper-indicator
-        width: 10px
-        height: 10px
-        margin: 0 4px
-        border-radius: 50%
-        &.is-active, &:hover
-          background-color: #63AEE5
-</style>
-
 <style lang="sass" scoped>
-.hooper
-  height: 100%
 .page-top
   position: relative
   width: 100%
   height: 100vh
   background-size: cover
   background-position: center center
+  margin-bottom: 60px
   &:after
     content: ''
     width: 100%
@@ -112,4 +76,33 @@ export default {
       .subtitle
         font-size: 16px
         letter-spacing: 3px
+  .user-icon
+    position: absolute
+    bottom: -75px
+    left: 50%
+    transform: translateX(-50%)
+    width: 150px
+    height: 150px
+    border-radius: 50%
+    border: 3px solid white
+    background-size: cover
+    background-position: center center
+    z-index: 1
+.profile
+  font-family: $en-accent-family
+  text-align: center
+  max-width: 360px
+  margin: 0 auto 180px
+  padding-top: 80px
+  .name
+    font-family: $ja-accent-family
+    font-size: 40px
+    letter-spacing: 5px
+  .name-alpha
+    font-size: 20px
+    letter-spacing: 4px
+    margin-bottom: 20px
+  .job-title
+    color: $secondary-grey
+    letter-spacing: 3px
 </style>
