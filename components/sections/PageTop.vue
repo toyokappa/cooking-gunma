@@ -9,6 +9,11 @@
       .name 松井 なおこ
       .name-alpha Matsui Naoko
       .job-title cooking club organizer, patissier, cooking specialist
+      .introduction
+        | あああああああああああああああああああああああああああああああああああああああああああああああ
+        br
+        br
+        | あああああああああああああああああああああああああああああああああああああああああああああああ
 </template>
 
 <script>
@@ -92,7 +97,7 @@ export default {
   font-family: $en-accent-family
   text-align: center
   max-width: 360px
-  margin: 0 auto 180px
+  margin: 0 auto
   padding-top: 80px
   .name
     font-family: $ja-accent-family
@@ -105,4 +110,5 @@ export default {
   .job-title
     color: $secondary-grey
     letter-spacing: 3px
+    margin-bottom: 40px
 </style>
