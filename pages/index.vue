@@ -2,7 +2,7 @@
   #wrapper
     g-header
     section.section
-      s-page-top
+      s-page-top(:profile="profile")
     section.section
       p-section-header#about(
         title="群馬お料理クラブ"
@@ -68,8 +68,16 @@ export default {
     });
     const blogPosts = blogRes.items;
 
+    const profileRes = await app.$ctfClient.getEntries({
+      content_type: "profile",
+      order: "sys.createdAt",
+      limit: 1
+    });
+    const profile = profileRes.items[0];
+
     return {
-      blogPosts
+      blogPosts,
+      profile
     };
   },
   head() {

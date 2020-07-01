@@ -18,19 +18,15 @@
 
 <script>
 import datetimeParserMixin from "@/components/mixins/datetimeParserMixin";
+import descriptionParserMixin from "@/components/mixins/descriptionParserMixin";
 
 export default {
-  mixins: [datetimeParserMixin],
+  mixins: [datetimeParserMixin, descriptionParserMixin],
   props: {
     blogPosts: {
       type: Array,
       required: true
     }
-  },
-  methods: {
-    parseDescription(text) {
-      return text.replace(/\n/g, "<br>");
-    },
   }
 };
 </script>

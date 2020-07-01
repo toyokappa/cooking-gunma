@@ -4,28 +4,32 @@
       .title-area
         .title-lg Gunma Cooking Club
         .subtitle 誰でも気軽に楽しくお料理を
-      .user-icon(v-lazy:backgroundImage="userIcon")
+      .user-icon(v-lazy:backgroundImage="profile.fields.photo.fields.file.url")
     #profile.profile
-      .name 松井 なおこ
-      .name-alpha Matsui Naoko
-      .job-title cooking club organizer, patissier, cooking specialist
-      .introduction
-        | あああああああああああああああああああああああああああああああああああああああああああああああ
-        br
-        br
-        | あああああああああああああああああああああああああああああああああああああああああああああああ
+      .name {{ profile.fields.name }}
+      .name-alpha {{ profile.fields.furigana }}
+      .job-title {{ profile.fields.title }}
+      .introduction(v-html="parseDescription(profile.fields.introduction)")
 </template>
 
 <script>
+import descriptionParserMixin from "@/components/mixins/descriptionParserMixin";
 import topImage from "~/assets/images/top_image.jpg";
 import userIcon from "~/assets/images/user_icon.jpg";
 
 export default {
+  mixins: [descriptionParserMixin],
   data() {
     return {
       topImage,
       userIcon
     };
+  },
+  props: {
+    profile: {
+      type: Object,
+      required: true
+    }
   }
 };
 </script>
