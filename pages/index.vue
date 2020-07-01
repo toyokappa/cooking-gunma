@@ -11,13 +11,6 @@
       )
       s-about
     section.section
-      p-section-header#profile(
-        title="運営者・講師"
-        subtitle="Member's Profile"
-        description="ともに歩む仲間たち"
-      )
-      s-member(:memberList="memberList")
-    section.section
       p-section-header#blog(
         title="最新情報"
         subtitle="Recent Blog Posts"
@@ -26,12 +19,12 @@
       s-blog(:blogPosts="blogPosts")
       p-blog-link-button
     section.section
-      p-section-header#flow(
-        title="授業開始までの流れ"
-        subtitle="How To Start"
+      p-section-header#lesson(
+        title="次回の献立"
+        subtitle="Next Cooking Recipe"
         description="ご利用前にご安心いただくために"
       )
-      s-flow
+      s-lesson
     section.section.section-grey
       p-section-header#contact(
         title="お問い合わせ"
@@ -51,9 +44,8 @@ import PSectionHeader from "@/components/parts/SectionHeader";
 import PBlogLinkButton from "@/components/parts/BlogLinkButton";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
-import SMember from "@/components/sections/Member";
 import SBlog from "@/components/sections/Blog";
-import SFlow from "@/components/sections/Flow";
+import SLesson from "@/components/sections/Lesson";
 import SContact from "@/components/sections/Contact";
 
 export default {
@@ -64,9 +56,8 @@ export default {
     PBlogLinkButton,
     SPageTop,
     SAbout,
-    SMember,
     SBlog,
-    SFlow,
+    SLesson,
     SContact
   },
   async asyncData({ app }) {
@@ -77,15 +68,8 @@ export default {
     });
     const blogPosts = blogRes.items;
 
-    const memberRes = await app.$ctfClient.getEntries({
-      content_type: "member",
-      order: "fields.position"
-    });
-    const memberList = memberRes.items;
-
     return {
-      blogPosts,
-      memberList
+      blogPosts
     };
   },
   head() {
