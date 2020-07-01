@@ -5,9 +5,9 @@
       s-page-top
     section.section
       p-section-header#about(
-        title="群馬お料理クラブとは？"
+        title="群馬お料理クラブ"
         subtitle="About Gunma Cooking Club"
-        description="親御さんに知ってほしいこと"
+        description="お料理教室への想い"
       )
       s-about
     section.section
@@ -22,7 +22,7 @@
       p-section-header#lesson(
         title="次回の献立"
         subtitle="Next Cooking Recipe"
-        description="ご利用前にご安心いただくために"
+        description="美味しく楽しくともに学ぶ"
       )
       s-lesson
     section.section.section-grey
@@ -73,21 +73,21 @@ export default {
     };
   },
   head() {
-    const pageTitle = "ランデレオン Official Site";
-    const imageUrl = "https://learndeleon.com/twitter_image.jpg";
+    const pageTitle = "群馬お料理クラブ Official Site";
+    // const imageUrl = "https://learndeleon.com/twitter_image.jpg";
     const description =
-      "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの公式サイトです。教育における想い、運営者紹介、サービス体系紹介などをお届けしております。";
+      "群馬県にて定期開催をしている料理教室「群馬お料理クラブ」の公式サイトです。「誰でも気軽に楽しくお料理を」をコンセプトにお料理体験を提供しています。";
     return {
       title: pageTitle,
       meta: [
         { name: "description", content: description },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: imageUrl },
+        // { name: "twitter:image", content: imageUrl },
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "website" },
-        { property: "og:image", content: imageUrl },
+        // { property: "og:image", content: imageUrl },
         { property: "og:description", content: description }
       ]
     };

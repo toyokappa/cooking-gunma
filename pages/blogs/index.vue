@@ -63,21 +63,21 @@ export default {
     };
   },
   head() {
-    const pageTitle = "ランデレオン Official Blog";
-    const imageUrl = "https://learndeleon.com/twitter_image.jpg";
+    const pageTitle = "群馬お料理クラブ Official Blog";
+    // const imageUrl = "https://learndeleon.com/twitter_image.jpg";
     const description =
-      "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの活動状況、お知らせをコンテンツとしてお届けしています。最新情報をお探しの方はこちらのブログを御覧ください。";
+      "群馬県にて定期開催をしている料理教室「群馬お料理クラブ」の活動状況、お知らせをコンテンツとしてお届けしています。最新情報をお探しの方はこちらのブログを御覧ください。";
     return {
       title: pageTitle,
       meta: [
         { name: "description", content: description },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: imageUrl },
+        // { name: "twitter:image", content: imageUrl },
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "website" },
-        { property: "og:image", content: imageUrl },
+        // { property: "og:image", content: imageUrl },
         { property: "og:description", content: description }
       ]
     };
