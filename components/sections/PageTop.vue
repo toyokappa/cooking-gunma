@@ -8,7 +8,7 @@
     #profile.profile
       .name 松井 なおこ
       .name-alpha Matsui Naoko
-      .job-title patissier, cooking specialist
+      .job-title cooking club organizer, patissier, cooking specialist
 </template>
 
 <script>
