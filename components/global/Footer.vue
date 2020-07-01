@@ -1,7 +1,7 @@
 <template lang="pug">
   footer.footer
     span &copy;
-    strong.mr-1 LEARN DE LEON
+    strong.mr-1 GUNMA COOKING CLUB
     span 2020
 </template>
 
