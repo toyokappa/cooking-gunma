@@ -5,8 +5,8 @@
       s-page-top
     section.section
       p-section-header#about(
-        title="ランデレオンとは？"
-        subtitle="About Learn de Leon"
+        title="群馬お料理クラブとは？"
+        subtitle="About Gunma Cooking Club"
         description="親御さんに知ってほしいこと"
       )
       s-about

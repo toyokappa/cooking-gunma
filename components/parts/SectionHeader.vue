@@ -36,7 +36,7 @@ export default {
 .section-header
   text-align: center
   padding-top: 80px
-  padding-bottom: 150px
+  padding-bottom: 100px
   .section-title
     font-family: $ja-accent-family
     letter-spacing: 5px
