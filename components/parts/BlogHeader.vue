@@ -4,7 +4,7 @@
       n-link.navbar-brand(to="/")
         i.fas.fa-angle-double-left.mr-2
         span Back to 
-        strong Learn de Leon's Site
+        strong Cooking Club's Site
 </template>
 
 <style lang="sass" scoped>

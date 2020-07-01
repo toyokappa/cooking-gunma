@@ -1,8 +1,8 @@
 <template lang="pug">
   .section-header
     .section-title
-      n-link(to="/blogs") 蒲公英のたより
-    h1.section-subtitle Learn de Leon Official Blog
+      n-link(to="/blogs") ブログタイトル
+    h1.section-subtitle Gunma Cooking Club Official Blog
     .section-description 最新の動向をコンテンツとしてお届け
 </template>
 

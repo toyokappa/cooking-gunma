@@ -3,7 +3,7 @@
     .container
       n-link.blog-link(to="/blogs")
         span Go to 
-        strong Learn de Leon's Blog
+        strong Cooking Club's Blog
         i.fas.fa-angle-double-right.ml-2
 </template>
 
