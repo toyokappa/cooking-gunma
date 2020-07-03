@@ -24,7 +24,7 @@
         subtitle="Next Cooking Recipe"
         description="美味しく楽しくともに学ぶ"
       )
-      s-lesson
+      s-lesson(:lesson="lesson")
     section.section.section-grey
       p-section-header#contact(
         title="お問い合わせ"
@@ -75,9 +75,17 @@ export default {
     });
     const profile = profileRes.items[0];
 
+    const lessonRes = await app.$ctfClient.getEntries({
+      content_type: "lesson",
+      order: "-sys.createdAt",
+      limit: 1
+    });
+    const lesson = lessonRes.items[0];
+
     return {
       blogPosts,
-      profile
+      profile,
+      lesson
     };
   },
   head() {

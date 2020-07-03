@@ -1,42 +1,62 @@
 <template lang="pug">
   .lesson
-    .container
+    .container(v-if="lesson")
       .row
         .offset-lg-1.col-lg-10
-          .recipe-image(v-lazy:backgroundImage="recipe")
-          .recipe-title 米粉を作ったバタークッキー
-          .recipe-description ああああああああああああああああああああああああああああああああああああああああああ
+          .recipe-image(v-lazy:backgroundImage="lesson.fields.image.fields.file.url")
+          .recipe-title {{ lesson.fields.title }}
+          .recipe-description(v-html="parseDescription(lesson.fields.description)")
           .lesson-at
             .label
               i.fa.fa-calendar-alt.mr-2
               span 開催日時
             .item
-              span.value 2020
+              span.value {{ lessonAtArray[0] }}
               span.unit 年
-              span.value 7
+              span.value {{ lessonAtArray[1] }}
               span.unit 月
-              span.value 18
-              span.unit.mr-2 日(土)
-              span.value 11:00
+              span.value {{ lessonAtArray[2] }}
+              span.unit.mr-2 日({{ lessonAtArray[3] }})
+              span.value {{ lessonAtArray[4] }}
               span.unit 開始
+          .lesson-location
+            .label
+              i.fa.fa-map-marker-alt.mr-2
+              span 開催場所
+            .item
+              .value {{ lesson.fields.location }}
           .lesson-fee
             .label
               i.fa.fa-yen-sign.mr-2
               span 受講料
             .item
-              span.value 5,000
+              span.value {{ lesson.fields.fee.toLocaleString() }}
               span.unit 円(税込)
             .excuse お支払い方法についてはxxxxx
+    .container(v-else)
+      .preparing 準備中です。しばしお待ち下さい。
 </template> 
 
 <script>
+import datetimeParserMixin from "@/components/mixins/datetimeParserMixin";
+import descriptionParserMixin from "@/components/mixins/descriptionParserMixin";
 import recipe from "@/assets/images/recipe_sample.jpg";
 
 export default {
+  mixins: [datetimeParserMixin, descriptionParserMixin],
   data() {
     return {
-      recipe
+      recipe,
+      lessonAtArray: []
     };
+  },
+  props: {
+    lesson: {
+      type: Object
+    }
+  },
+  mounted() {
+    this.lessonAtArray = this.parseDatetimeArray(this.lesson.fields.lessonAt);
   }
 };
 </script>
@@ -64,7 +84,7 @@ export default {
       font-size: 20px
     .recipe-description
       font-size: 14px
-  .lesson-at, .lesson-fee
+  .lesson-at, .lesson-location, .lesson-fee
     margin-bottom: 30px
     .label
       color: $primary-grey
@@ -80,4 +100,8 @@ export default {
     .excuse
       color: $primary-grey
       font-size: 14px
+  .preparing
+    text-align: center
+    font-size: 20px
+    font-weight: bold
 </style>
