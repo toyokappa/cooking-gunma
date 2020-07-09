@@ -2,7 +2,7 @@
   .section-header
     .section-title
       n-link(to="/blogs") ブログタイトル
-    h1.section-subtitle Gunma Cooking Club Official Blog
+    h1.section-subtitle Cooking Gunma Official Blog
     .section-description 最新の動向をコンテンツとしてお届け
 </template>
 

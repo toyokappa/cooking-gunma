@@ -3,7 +3,7 @@
     .container
       n-link.blog-link(to="/blogs")
         span Go to 
-        strong Cooking Club's Blog
+        strong Cooking Gunma's Blog
         i.fas.fa-angle-double-right.ml-2
 </template>
 

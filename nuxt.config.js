@@ -35,7 +35,8 @@ export default {
       { rel: 'mask-icon', href: 'safari-pinned-tab.svg', color: '#63aee5' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sawarabi+Mincho' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sawarabi+Mincho' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/iyt7fjw.css' }
     ]
   },
   env: {

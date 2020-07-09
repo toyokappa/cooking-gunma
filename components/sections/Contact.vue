@@ -131,7 +131,7 @@ export default {
     .item
       display: inline
       .link
-        color: $primary-grey
+        color: #F2BDD0
     @include media-breakpoint-up(sm)
       .item
         font-size: 36px

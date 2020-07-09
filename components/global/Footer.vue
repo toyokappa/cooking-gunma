@@ -1,7 +1,7 @@
 <template lang="pug">
   footer.footer
     span &copy;
-    strong.mr-1 GUNMA COOKING CLUB
+    strong.mr-1 COOKING GUNMA
     span 2020
 </template>
 
@@ -10,6 +10,6 @@
   text-align: center
   color: white
   font-size: 10px
-  background-color: black
+  background-color: $primary-dark
   padding: 15px
 </style>

@@ -6,7 +6,7 @@
     section.section
       p-section-header#about(
         title="群馬お料理クラブ"
-        subtitle="About Gunma Cooking Club"
+        subtitle="About Cooking Gunma"
         description="お料理教室への想い"
       )
       s-about
@@ -30,7 +30,7 @@
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="些細なことでも お気軽に ご相談ください"
-        titleColor="#63AEE5"
+        titleColor="#F2A0BE"
         subtitleColor="black"
       )
       s-contact

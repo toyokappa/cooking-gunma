@@ -14,7 +14,7 @@
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="些細なことでも お気軽に ご相談ください"
-        titleColor="#63AEE5"
+        titleColor="#F2A0BE"
         subtitleColor="black"
       )
       s-contact

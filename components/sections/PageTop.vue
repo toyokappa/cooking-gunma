@@ -2,7 +2,9 @@
   .welcome
     #pageTop.page-top(v-lazy:backgroundImage="topImage")
       .title-area
-        .title-lg Gunma Cooking Club
+        .title-lg
+          img(v-lazy="logoIcon")
+          span Cooking Gunma
         .subtitle 誰でも気軽に楽しくお料理を
       .user-icon(v-lazy:backgroundImage="profile.fields.photo.fields.file.url")
     #profile.profile
@@ -15,6 +17,7 @@
 <script>
 import descriptionParserMixin from "@/components/mixins/descriptionParserMixin";
 import topImage from "~/assets/images/top_image.jpg";
+import logoIcon from "~/assets/images/logo_icon_white.svg";
 import userIcon from "~/assets/images/user_icon.jpg";
 
 export default {
@@ -22,6 +25,7 @@ export default {
   data() {
     return {
       topImage,
+      logoIcon,
       userIcon
     };
   },
@@ -46,7 +50,7 @@ export default {
     content: ''
     width: 100%
     height: 100vh
-    background-color: rgba(0, 0, 0, 0.2)
+    background-color: rgba(0, 0, 0, 0.3)
     position: absolute
     top: 0
     left: 0
@@ -64,8 +68,11 @@ export default {
     @include media-breakpoint-up(sm)
       .title-lg
         font-size: 60px
-        font-weight: bold
-        letter-spacing: 5px
+        img
+          height: 80px
+          margin-right: 12px
+          position: relative
+          bottom: 15px
       .title-sm
         font-size: 54px
         font-weight: bold
@@ -76,8 +83,11 @@ export default {
     @include media-breakpoint-down(xs)
       .title-lg
         font-size: 36px
-        font-weight: bold
-        letter-spacing: 5px
+        img
+          height: 50px
+          margin-right: 8px
+          position: relative
+          bottom: 10px
       .title-sm
         font-size: 30px
         font-weight: bold

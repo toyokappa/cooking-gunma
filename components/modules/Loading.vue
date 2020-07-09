@@ -50,7 +50,7 @@ export default {
       display: inline-block
       width: 24px
       height: 24px
-      background-color: #63AEE5
+      background-color: $accent-color
       border-radius: 50%
       margin: 0 5px
       animation: sk-bounce-delay 1.4s infinite ease-in-out both
