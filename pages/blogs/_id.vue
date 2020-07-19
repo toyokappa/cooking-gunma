@@ -39,17 +39,12 @@ export default {
     MNextPrev,
     SContact
   },
-  async asyncData({ app, params, payload }) {
-    let blogPost;
-    if (payload) {
-      blogPost = payload;
-    } else {
-      const blogRes = await app.$ctfClient.getEntries({
-        content_type: "blogPosts",
-        "sys.id": params.id
-      });
-      blogPost = blogRes.items[0];
-    }
+  async asyncData({ app, params }) {
+    const blogRes = await app.$ctfClient.getEntries({
+      content_type: "blogPosts",
+      "sys.id": params.id
+    });
+    const blogPost = blogRes.items[0];
 
     const prevRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
