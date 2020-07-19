@@ -40,11 +40,14 @@ export default {
     SContact
   },
   async asyncData({ app, params }) {
+    console.log(params.id);
     const blogRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
       "sys.id": params.id
     });
+    console.log(blogRes);
     const blogPost = blogRes.items[0];
+    console.log(blogPost);
 
     const prevRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
@@ -53,6 +56,7 @@ export default {
       limit: 1
     });
     const prevPost = prevRes.items[0];
+
     const nextRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
       "sys.createdAt[gt]": blogPost.sys.createdAt,
@@ -60,6 +64,7 @@ export default {
       limit: 1
     });
     const nextPost = nextRes.items[0];
+
     return {
       blogPost,
       prevPost,
