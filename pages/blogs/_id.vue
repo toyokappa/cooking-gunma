@@ -40,14 +40,11 @@ export default {
     SContact
   },
   async asyncData({ app, params }) {
-    console.log(params.id);
     const blogRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
       "sys.id": params.id
     });
-    console.log(blogRes);
     const blogPost = blogRes.items[0];
-    console.log(blogPost);
 
     const prevRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",

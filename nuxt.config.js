@@ -135,4 +135,11 @@ export default {
      */
     extend(config, ctx) { },
   },
+  router: {
+    extentdRouter(routes) {
+      for (const key in routes) {
+        routes[key].caseSensitive = true
+      }
+    }
+  }
 }
