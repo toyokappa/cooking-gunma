@@ -121,7 +121,7 @@ export default {
       color: white
       font-size: 24px
       background-color: $accent-color
-      padding: 15px 30px
+      padding: 12px 24px
       border: 3px solid $accent-color
       border-radius: 5px
       cursor: pointer
