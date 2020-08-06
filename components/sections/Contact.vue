@@ -5,27 +5,38 @@
       .offset-lg-3.offset-md-2.col-lg-6.col-md-8
         form.contact-form(@submit="sendMail")
           .form-group
-            label.sr-only(for="inputName") Name
+            label.sr-only(for="inputCategory") Category
+            select#inputCategory.form-control(
+              name="inputCategory",
+              v-model="contactForm.category",
+              required
+            )
+              option(value="", disabled) 問い合わせ種別
+              option(value="レッスン参加の申し込み") レッスン参加の申込み
+              option(value="お料理教室についてのお問い合わせ") お料理教室についてのお問い合わせ
+              option(value="その他") その他
+          .form-group
+            label.sr-only(for="inputName") お名前
             input#inputName.form-control(
               type="text",
-              placeholder="Name",
+              placeholder="お名前",
               name="inputName",
               v-model="contactForm.name",
               required
             )
           .form-group
-            label.sr-only(for="inputEmail") E-mail
+            label.sr-only(for="inputEmail") メールアドレス
             input#inputEmail.form-control(
               type="email",
-              placeholder="E-mail",
+              placeholder="メールアドレス",
               name="inputEmail",
               v-model="contactForm.email",
               required
             )
           .form-group
-            label.sr-only(for="inputMessage") Message
+            label.sr-only(for="inputMessage") 本文
             textarea#inputMessage.form-control(
-              placeholder="Message",
+              placeholder="本文",
               name="inputMessage",
               rows="5",
               v-model="contactForm.message"
@@ -54,6 +65,7 @@ export default {
   data() {
     return {
       contactForm: {
+        category: "",
         name: "",
         email: "",
         message: "",
@@ -84,7 +96,7 @@ export default {
       }
     },
     resetForm() {
-      this.contactForm = { name: "", email: "", message: "" };
+      this.contactForm = { category: "", name: "", email: "", message: "" };
     },
   },
 };
@@ -94,7 +106,7 @@ export default {
 .contact
   .form-group
     margin-bottom: 5px
-  input, textarea
+  select, input, textarea
     height: auto
     background-color: white
     border-radius: 0
