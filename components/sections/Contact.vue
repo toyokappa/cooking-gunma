@@ -45,19 +45,19 @@
             button#submitButton.btn.btn-default.btn-submit(type="submit")
               i.fas.fa-check.mr-2
               | SUBMIT
-    ul.social-links
-      li.item
-        a.link(href="https://twitter.com/xxx", target="new")
-          i.fab.fa-twitter
-      li.item
-        a.link(href="https://www.facebook.com/xxx", target="new")
-          i.fab.fa-facebook-square
-      li.item
-        a.link(href="https://instagram.com/xxx", target="new")
-          i.fab.fa-instagram
-      li.item
-        a.link(href="https://www.youtube.com/channel/xxx", target="new")
-          i.fab.fa-youtube
+    // ul.social-links
+    //   li.item
+    //     a.link(href="https://twitter.com/xxx", target="new")
+    //       i.fab.fa-twitter
+    //   li.item
+    //     a.link(href="https://www.facebook.com/xxx", target="new")
+    //       i.fab.fa-facebook-square
+    //   li.item
+    //     a.link(href="https://instagram.com/xxx", target="new")
+    //       i.fab.fa-instagram
+    //   li.item
+    //     a.link(href="https://www.youtube.com/channel/xxx", target="new")
+    //       i.fab.fa-youtube
 </template>
 
 <script>

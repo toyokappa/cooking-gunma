@@ -25,6 +25,13 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.header-nav
           n-link.nav-link(v-scroll-to="'#lesson'", to) LESSON
         li.nav-item
           n-link.nav-link(v-scroll-to="'#contact'", to) CONTACT
+        li.nav-item
+          a.nav-link(
+            href="https://www.facebook.com/cooking.gunma",
+            target="new"
+          )
+            i.fab.fa-facebook-square.mr-1
+            span FACEBOOK
   #navbarMenu.container
     ul.navbar-nav(@click="toggleActive")
       li.nav-item
@@ -37,6 +44,10 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.header-nav
         n-link.nav-link(v-scroll-to="'#lesson'", to) LESSON
       li.nav-item
         n-link.nav-link(v-scroll-to="'#contact'", to) CONTACT
+      li.nav-item
+        a.nav-link(href="https://www.facebook.com/cooking.gunma", target="new")
+          i.fab.fa-facebook-square.mr-1
+          span FACEBOOK
 </template>
 
 <script>
