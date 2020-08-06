@@ -12,7 +12,7 @@
               required
             )
               option(value="", disabled) 問い合わせ種別
-              option(value="レッスン参加の申し込み") レッスン参加の申込み
+              option(value="レッスン参加のお申し込み") レッスン参加のお申し込み
               option(value="お料理教室についてのお問い合わせ") お料理教室についてのお問い合わせ
               option(value="その他") その他
           .form-group
@@ -72,6 +72,9 @@ export default {
       },
     };
   },
+  mounted() {
+    this.$parent.$on("submitLesson", this.selectLesson);
+  },
   methods: {
     async sendMail(e) {
       e.preventDefault();
@@ -97,6 +100,9 @@ export default {
     },
     resetForm() {
       this.contactForm = { category: "", name: "", email: "", message: "" };
+    },
+    selectLesson() {
+      this.contactForm.category = "レッスン参加のお申し込み";
     },
   },
 };

@@ -37,6 +37,8 @@
             span.value {{ lesson.fields.fee.toLocaleString() }}
             span.unit 円(税込)
           .excuse お支払い方法については、当日の手渡しでお願いしております。
+        .lesson-submit
+          .submit-button(@click="submitLesson") レッスンに参加する
   .container(v-else)
     .preparing 準備中です。しばしお待ち下さい。
 </template> 
@@ -61,6 +63,13 @@ export default {
   },
   mounted() {
     this.lessonAtArray = this.parseDatetimeArray(this.lesson.fields.lessonAt);
+  },
+  methods: {
+    submitLesson() {
+      console.log(this);
+      this.$parent.$emit("submitLesson");
+      this.$scrollTo("#contact");
+    },
   },
 };
 </script>
@@ -104,6 +113,22 @@ export default {
     .excuse
       color: $primary-grey
       font-size: 14px
+  .lesson-submit
+    text-align: center
+    margin-top: 50px
+    .submit-button
+      display: inline-block
+      color: white
+      font-size: 24px
+      background-color: $accent-color
+      padding: 15px 30px
+      border: 3px solid $accent-color
+      border-radius: 5px
+      cursor: pointer
+      transition: 0.3s
+      &:hover
+        color: $accent-color
+        background-color: white
   .preparing
     text-align: center
     font-size: 20px
