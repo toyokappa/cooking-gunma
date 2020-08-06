@@ -1,17 +1,17 @@
 <template lang="pug">
-  .welcome
-    #pageTop.page-top(v-lazy:backgroundImage="topImage")
-      .title-area
-        .title-lg
-          img(v-lazy="logoIcon")
-          span Cooking Gunma
-        .subtitle 誰でも気軽に楽しくお料理を
-      .user-icon(v-lazy:backgroundImage="profile.fields.photo.fields.file.url")
-    #profile.profile
-      .name {{ profile.fields.name }}
-      .name-alpha {{ profile.fields.furigana }}
-      .job-title {{ profile.fields.title }}
-      .introduction(v-html="parseDescription(profile.fields.introduction)")
+.welcome
+  #pageTop.page-top(v-lazy:backgroundImage="topImage")
+    .title-area
+      .title-lg
+        img(v-lazy="logoIcon")
+        span Cooking Gunma
+      .subtitle 誰でも気軽に楽しくお料理を
+    .user-icon(v-lazy:backgroundImage="profile.fields.photo.fields.file.url")
+  #profile.profile
+    .name {{ profile.fields.name }}
+    .name-alpha {{ profile.fields.furigana }}
+    .job-title {{ profile.fields.title }}
+    .introduction(v-html="parseDescription(profile.fields.introduction)")
 </template>
 
 <script>
@@ -26,15 +26,15 @@ export default {
     return {
       topImage,
       logoIcon,
-      userIcon
+      userIcon,
     };
   },
   props: {
     profile: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

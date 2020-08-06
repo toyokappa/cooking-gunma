@@ -1,23 +1,20 @@
 <template lang="pug">
-  #wrapper
-    p-blog-header
-    section.section
-      p-blog-title
-      s-blog-post(:blogPost="blogPost")
-      m-next-prev(
-        :nextPost="nextPost"
-        :prevPost="prevPost"
-      )
-    section.section.section-grey
-      p-section-header(
-        title="お問い合わせ"
-        subtitle="Get In Touch"
-        description="些細なことでも お気軽に ご相談ください"
-        titleColor="#F2A0BE"
-        subtitleColor="black"
-      )
-      s-contact
-    g-footer
+#wrapper
+  p-blog-header
+  section.section
+    p-blog-title
+    s-blog-post(:blogPost="blogPost")
+    m-next-prev(:nextPost="nextPost", :prevPost="prevPost")
+  section.section.section-grey
+    p-section-header(
+      title="お問い合わせ",
+      subtitle="Get In Touch",
+      description="些細なことでも お気軽に ご相談ください",
+      titleColor="#F2A0BE",
+      subtitleColor="black"
+    )
+    s-contact
+  g-footer
 </template>
 
 <script>
@@ -37,12 +34,12 @@ export default {
     PSectionHeader,
     SBlogPost,
     MNextPrev,
-    SContact
+    SContact,
   },
   async asyncData({ app, params }) {
     const blogRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
-      "sys.id": params.id
+      "sys.id": params.id,
     });
     const blogPost = blogRes.items[0];
 
@@ -50,7 +47,7 @@ export default {
       content_type: "blogPosts",
       "sys.createdAt[lt]": blogPost.sys.createdAt,
       order: "-sys.createdAt",
-      limit: 1
+      limit: 1,
     });
     const prevPost = prevRes.items[0];
 
@@ -58,14 +55,14 @@ export default {
       content_type: "blogPosts",
       "sys.createdAt[gt]": blogPost.sys.createdAt,
       order: "sys.createdAt",
-      limit: 1
+      limit: 1,
     });
     const nextPost = nextRes.items[0];
 
     return {
       blogPost,
       prevPost,
-      nextPost
+      nextPost,
     };
   },
   head() {
@@ -83,10 +80,10 @@ export default {
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "article" },
         { property: "og:image", content: imageUrl },
-        { property: "og:description", content: description }
-      ]
+        { property: "og:description", content: description },
+      ],
     };
-  }
+  },
 };
 </script>
 

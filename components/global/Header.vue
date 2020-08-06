@@ -1,42 +1,42 @@
 <template lang="pug">
-  header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.header-nav
-    nav.container
-      n-link.navbar-brand(v-scroll-to="'#pageTop'" to)
-        img.logo(src="~/assets/images/logo.png")
-      .toggle-button
-        client-only
-          tasty-burger-button(
-            type="spin"
-            color="black"
-            size="s"
-            :active="isActive"
-            @toggle="toggleNavMenu"
-            ref="burgerButton"
-          )
-      .collapse-menu
-        ul.navbar-nav.ml-auto
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#about'" to) ABOUT
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#lesson'" to) LESSON
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
-    #navbarMenu.container
-      ul.navbar-nav(@click="toggleActive")
+header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.header-nav
+  nav.container
+    n-link.navbar-brand(v-scroll-to="'#pageTop'", to)
+      img.logo(src="~/assets/images/logo.png")
+    .toggle-button
+      client-only
+        tasty-burger-button(
+          type="spin",
+          color="black",
+          size="s",
+          :active="isActive",
+          @toggle="toggleNavMenu",
+          ref="burgerButton"
+        )
+    .collapse-menu
+      ul.navbar-nav.ml-auto
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
+          n-link.nav-link(v-scroll-to="'#profile'", to) PROFILE
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#about'" to) ABOUT
+          n-link.nav-link(v-scroll-to="'#about'", to) ABOUT
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
+          n-link.nav-link(v-scroll-to="'#blog'", to) BLOG
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#lesson'" to) LESSON
+          n-link.nav-link(v-scroll-to="'#lesson'", to) LESSON
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
+          n-link.nav-link(v-scroll-to="'#contact'", to) CONTACT
+  #navbarMenu.container
+    ul.navbar-nav(@click="toggleActive")
+      li.nav-item
+        n-link.nav-link(v-scroll-to="'#profile'", to) PROFILE
+      li.nav-item
+        n-link.nav-link(v-scroll-to="'#about'", to) ABOUT
+      li.nav-item
+        n-link.nav-link(v-scroll-to="'#blog'", to) BLOG
+      li.nav-item
+        n-link.nav-link(v-scroll-to="'#lesson'", to) LESSON
+      li.nav-item
+        n-link.nav-link(v-scroll-to="'#contact'", to) CONTACT
 </template>
 
 <script>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       activeLink: "",
-      isActive: false
+      isActive: false,
     };
   },
   methods: {
@@ -54,8 +54,8 @@ export default {
     },
     toggleActive() {
       this.isActive = !this.isActive;
-    }
-  }
+    },
+  },
 };
 </script>
 

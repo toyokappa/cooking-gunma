@@ -1,18 +1,18 @@
 <template lang="pug">
-  .blog
-    .blog-wrapper.container
-      .blog-post.row
-        .offset-sm-1.col-sm-10
-          .blog-post-header
-            .image(
-              v-lazy:background-image="blogPost.fields.eyecatch.fields.file.url"
-            )
-            h1.title {{ blogPost.fields.title }}
-            .created-at
-              i.far.fa-calendar-alt.mr-2
-              span {{ parseCreatedAt(blogPost.sys.createdAt) }}
-          .blog-post-body
-            .markdown-body(v-html="$md.render(blogPost.fields.body)")
+.blog
+  .blog-wrapper.container
+    .blog-post.row
+      .offset-sm-1.col-sm-10
+        .blog-post-header
+          .image(
+            v-lazy:background-image="blogPost.fields.eyecatch.fields.file.url"
+          )
+          h1.title {{ blogPost.fields.title }}
+          .created-at
+            i.far.fa-calendar-alt.mr-2
+            span {{ parseCreatedAt(blogPost.sys.createdAt) }}
+        .blog-post-body
+          .markdown-body(v-html="$md.render(blogPost.fields.body)")
 </template>
 
 <script>
@@ -23,9 +23,9 @@ export default {
   props: {
     blogPost: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

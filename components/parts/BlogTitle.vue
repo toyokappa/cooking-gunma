@@ -1,9 +1,9 @@
 <template lang="pug">
-  .section-header
-    .section-title
-      n-link(to="/blogs") ブログタイトル
-    h1.section-subtitle Cooking Gunma Official Blog
-    .section-description 最新の動向をコンテンツとしてお届け
+.section-header
+  .section-title
+    n-link(to="/blogs") ブログタイトル
+  h1.section-subtitle Cooking Gunma Official Blog
+  .section-description 最新の動向をコンテンツとしてお届け
 </template>
 
 <style lang="sass" scoped>

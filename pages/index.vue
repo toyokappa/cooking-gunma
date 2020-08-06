@@ -1,40 +1,40 @@
 <template lang="pug">
-  #wrapper
-    g-header
-    section.section
-      s-page-top(:profile="profile")
-    section.section
-      p-section-header#about(
-        title="群馬お料理クラブ"
-        subtitle="About Cooking Gunma"
-        description="お料理教室への想い"
-      )
-      s-about
-    section.section
-      p-section-header#blog(
-        title="最新情報"
-        subtitle="Recent Blog Posts"
-        description="最新の動向をコンテンツとしてお届け"
-      )
-      s-blog(:blogPosts="blogPosts")
-      p-blog-link-button
-    section.section
-      p-section-header#lesson(
-        title="次回の献立"
-        subtitle="Next Cooking Recipe"
-        description="美味しく楽しくともに学ぶ"
-      )
-      s-lesson(:lesson="lesson")
-    section.section.section-grey
-      p-section-header#contact(
-        title="お問い合わせ"
-        subtitle="Get In Touch"
-        description="些細なことでも お気軽に ご相談ください"
-        titleColor="#F2A0BE"
-        subtitleColor="black"
-      )
-      s-contact
-    g-footer
+#wrapper
+  g-header
+  section.section
+    s-page-top(:profile="profile")
+  section.section
+    p-section-header#about(
+      title="群馬お料理クラブ",
+      subtitle="About Cooking Gunma",
+      description="お料理教室への想い"
+    )
+    s-about
+  section.section
+    p-section-header#blog(
+      title="最新情報",
+      subtitle="Recent Blog Posts",
+      description="最新の動向をコンテンツとしてお届け"
+    )
+    s-blog(:blogPosts="blogPosts")
+    p-blog-link-button
+  section.section
+    p-section-header#lesson(
+      title="次回の献立",
+      subtitle="Next Cooking Recipe",
+      description="美味しく楽しくともに学ぶ"
+    )
+    s-lesson(:lesson="lesson")
+  section.section.section-grey
+    p-section-header#contact(
+      title="お問い合わせ",
+      subtitle="Get In Touch",
+      description="些細なことでも お気軽に ご相談ください",
+      titleColor="#F2A0BE",
+      subtitleColor="black"
+    )
+    s-contact
+  g-footer
 </template>
 
 <script>
@@ -58,34 +58,34 @@ export default {
     SAbout,
     SBlog,
     SLesson,
-    SContact
+    SContact,
   },
   async asyncData({ app }) {
     const blogRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
       order: "-sys.createdAt",
-      limit: 3
+      limit: 3,
     });
     const blogPosts = blogRes.items;
 
     const profileRes = await app.$ctfClient.getEntries({
       content_type: "profile",
       order: "sys.createdAt",
-      limit: 1
+      limit: 1,
     });
     const profile = profileRes.items[0];
 
     const lessonRes = await app.$ctfClient.getEntries({
       content_type: "lesson",
       order: "-sys.createdAt",
-      limit: 1
+      limit: 1,
     });
     const lesson = lessonRes.items[0];
 
     return {
       blogPosts,
       profile,
-      lesson
+      lesson,
     };
   },
   head() {
@@ -104,10 +104,10 @@ export default {
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "website" },
         // { property: "og:image", content: imageUrl },
-        { property: "og:description", content: description }
-      ]
+        { property: "og:description", content: description },
+      ],
     };
-  }
+  },
 };
 </script>
 

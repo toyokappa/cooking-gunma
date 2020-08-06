@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt
+nuxt
 </template>
 
 <style lang="sass">

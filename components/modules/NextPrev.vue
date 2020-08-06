@@ -1,26 +1,30 @@
 <template lang="pug">
-  .paging.container
-    .row
-      .offset-sm-1.col-sm-10
-        .row
-          .col-6
-            client-only
-              .next-post(v-if="nextPost")
-                n-link(:to="`/blogs/${nextPost.sys.id}`")
-                  .post-image(v-lazy:background-image="nextPost.fields.eyecatch.fields.file.url")
-                  .post-title {{ nextPost.fields.title }}
-                  .post-created-at
-                    i.far.fa-calendar-alt.mr-2
-                    span {{ parseCreatedAt(nextPost.sys.createdAt) }}
-          .col-6
-            client-only
-              .prev-post(v-if="prevPost")
-                n-link(:to="`/blogs/${prevPost.sys.id}`")
-                  .post-image(v-lazy:background-image="prevPost.fields.eyecatch.fields.file.url")
-                  .post-title {{ prevPost.fields.title }}
-                  .post-created-at
-                    i.far.fa-calendar-alt.mr-2
-                    span {{ parseCreatedAt(prevPost.sys.createdAt) }}
+.paging.container
+  .row
+    .offset-sm-1.col-sm-10
+      .row
+        .col-6
+          client-only
+            .next-post(v-if="nextPost")
+              n-link(:to="`/blogs/${nextPost.sys.id}`")
+                .post-image(
+                  v-lazy:background-image="nextPost.fields.eyecatch.fields.file.url"
+                )
+                .post-title {{ nextPost.fields.title }}
+                .post-created-at
+                  i.far.fa-calendar-alt.mr-2
+                  span {{ parseCreatedAt(nextPost.sys.createdAt) }}
+        .col-6
+          client-only
+            .prev-post(v-if="prevPost")
+              n-link(:to="`/blogs/${prevPost.sys.id}`")
+                .post-image(
+                  v-lazy:background-image="prevPost.fields.eyecatch.fields.file.url"
+                )
+                .post-title {{ prevPost.fields.title }}
+                .post-created-at
+                  i.far.fa-calendar-alt.mr-2
+                  span {{ parseCreatedAt(prevPost.sys.createdAt) }}
 </template>
 
 <script>
@@ -30,12 +34,12 @@ export default {
   mixins: [datetimeParserMixin],
   props: {
     nextPost: {
-      type: Object
+      type: Object,
     },
     prevPost: {
-      type: Object
-    }
-  }
+      type: Object,
+    },
+  },
 };
 </script>
 

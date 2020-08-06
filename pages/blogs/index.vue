@@ -1,24 +1,24 @@
 <template lang="pug">
-  #wrapper
-    p-blog-header
-    section.section
-      p-blog-title
-      s-blog(:blogPosts="blogPosts")
-      m-paging(
-        :total="blogRes.total"
-        :limit="blogRes.limit"
-        :skip="blogRes.skip"
-      )
-    section.section.section-grey
-      p-section-header(
-        title="お問い合わせ"
-        subtitle="Get In Touch"
-        description="些細なことでも お気軽に ご相談ください"
-        titleColor="#F2A0BE"
-        subtitleColor="black"
-      )
-      s-contact
-    g-footer
+#wrapper
+  p-blog-header
+  section.section
+    p-blog-title
+    s-blog(:blogPosts="blogPosts")
+    m-paging(
+      :total="blogRes.total",
+      :limit="blogRes.limit",
+      :skip="blogRes.skip"
+    )
+  section.section.section-grey
+    p-section-header(
+      title="お問い合わせ",
+      subtitle="Get In Touch",
+      description="些細なことでも お気軽に ご相談ください",
+      titleColor="#F2A0BE",
+      subtitleColor="black"
+    )
+    s-contact
+  g-footer
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
     PSectionHeader,
     SBlog,
     SContact,
-    MPaging
+    MPaging,
   },
   async asyncData({ route, app, env }) {
     let pageNum = 1;
@@ -51,7 +51,7 @@ export default {
       content_type: "blogPosts",
       order: "-sys.createdAt",
       limit,
-      skip
+      skip,
     };
 
     const blogRes = await app.$ctfClient.getEntries(params);
@@ -59,7 +59,7 @@ export default {
 
     return {
       blogRes,
-      blogPosts
+      blogPosts,
     };
   },
   head() {
@@ -78,10 +78,10 @@ export default {
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "website" },
         // { property: "og:image", content: imageUrl },
-        { property: "og:description", content: description }
-      ]
+        { property: "og:description", content: description },
+      ],
     };
-  }
+  },
 };
 </script>
 

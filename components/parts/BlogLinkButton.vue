@@ -1,10 +1,10 @@
 <template lang="pug">
-  .blog-link-button
-    .container
-      n-link.blog-link(to="/blogs")
-        span Go to 
-        strong Cooking Gunma's Blog
-        i.fas.fa-angle-double-right.ml-2
+.blog-link-button
+  .container
+    n-link.blog-link(to="/blogs")
+      span Go to
+      strong Cooking Gunma's Blog
+      i.fas.fa-angle-double-right.ml-2
 </template>
 
 <style lang="sass" scoped>

@@ -1,40 +1,44 @@
 <template lang="pug">
-  .lesson
-    .container(v-if="lesson")
-      .row
-        .offset-lg-1.col-lg-10
-          .recipe-image(v-lazy:backgroundImage="lesson.fields.image.fields.file.url")
-          .recipe-title {{ lesson.fields.title }}
-          .recipe-description(v-html="parseDescription(lesson.fields.description)")
-          .lesson-at
-            .label
-              i.fa.fa-calendar-alt.mr-2
-              span 開催日時
-            .item
-              span.value {{ lessonAtArray[0] }}
-              span.unit 年
-              span.value {{ lessonAtArray[1] }}
-              span.unit 月
-              span.value {{ lessonAtArray[2] }}
-              span.unit.mr-2 日({{ lessonAtArray[3] }})
-              span.value {{ lessonAtArray[4] }}
-              span.unit 開始
-          .lesson-location
-            .label
-              i.fa.fa-map-marker-alt.mr-2
-              span 開催場所
-            .item
-              .value {{ lesson.fields.location }}
-          .lesson-fee
-            .label
-              i.fa.fa-yen-sign.mr-2
-              span 受講料
-            .item
-              span.value {{ lesson.fields.fee.toLocaleString() }}
-              span.unit 円(税込)
-            .excuse お支払い方法についてはxxxxx
-    .container(v-else)
-      .preparing 準備中です。しばしお待ち下さい。
+.lesson
+  .container(v-if="lesson")
+    .row
+      .offset-lg-1.col-lg-10
+        .recipe-image(
+          v-lazy:backgroundImage="lesson.fields.image.fields.file.url"
+        )
+        .recipe-title {{ lesson.fields.title }}
+        .recipe-description(
+          v-html="parseDescription(lesson.fields.description)"
+        )
+        .lesson-at
+          .label
+            i.fa.fa-calendar-alt.mr-2
+            span 開催日時
+          .item
+            span.value {{ lessonAtArray[0] }}
+            span.unit 年
+            span.value {{ lessonAtArray[1] }}
+            span.unit 月
+            span.value {{ lessonAtArray[2] }}
+            span.unit.mr-2 日({{ lessonAtArray[3] }})
+            span.value {{ lessonAtArray[4] }}
+            span.unit 開始
+        .lesson-location
+          .label
+            i.fa.fa-map-marker-alt.mr-2
+            span 開催場所
+          .item
+            .value {{ lesson.fields.location }}
+        .lesson-fee
+          .label
+            i.fa.fa-yen-sign.mr-2
+            span 受講料
+          .item
+            span.value {{ lesson.fields.fee.toLocaleString() }}
+            span.unit 円(税込)
+          .excuse お支払い方法については、当日の手渡しでお願いしております。
+  .container(v-else)
+    .preparing 準備中です。しばしお待ち下さい。
 </template> 
 
 <script>
@@ -47,17 +51,17 @@ export default {
   data() {
     return {
       recipe,
-      lessonAtArray: []
+      lessonAtArray: [],
     };
   },
   props: {
     lesson: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   mounted() {
     this.lessonAtArray = this.parseDatetimeArray(this.lesson.fields.lessonAt);
-  }
+  },
 };
 </script>
 

@@ -1,16 +1,16 @@
 <template lang="pug">
-  .loading-page(v-show="loading" ref="loading")
-    .spinner
-      .bounce1
-      .bounce2
-      .bounce3
+.loading-page(v-show="loading", ref="loading")
+  .spinner
+    .bounce1
+    .bounce2
+    .bounce3
 </template>
 
 <script>
 export default {
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -22,8 +22,8 @@ export default {
       setTimeout(() => {
         this.loading = false;
       }, 500);
-    }
-  }
+    },
+  },
 };
 </script>
 

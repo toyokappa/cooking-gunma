@@ -1,58 +1,52 @@
 <template lang="pug">
-  .contact
-    .contact-wrapper.container
-      .row
-        .offset-lg-3.offset-md-2.col-lg-6.col-md-8
-          form.contact-form(@submit="sendMail")
-            .form-group
-              label.sr-only(for="inputName") Name
-              input.form-control(
-                type="text"
-                placeholder="Name"
-                name="inputName"
-                id="inputName"
-                v-model="contactForm.name"
-                required
-              )
-            .form-group
-              label.sr-only(for="inputEmail") E-mail
-              input.form-control(
-                type="email"
-                placeholder="E-mail"
-                name="inputEmail"
-                id="inputEmail"
-                v-model="contactForm.email"
-                required
-              )
-            .form-group
-              label.sr-only(for="inputMessage") Message
-              textarea.form-control(
-                placeholder="Message"
-                name="inputMessage"
-                id="inputMessage"
-                rows="5"
-                v-model="contactForm.message"
-              )
-            .button-area
-              button.btn.btn-default.btn-submit(
-                type="submit"
-                id="submitButton"
-              )
-                i.fas.fa-check.mr-2
-                | SUBMIT
-      ul.social-links
-        li.item
-          a.link(href="https://twitter.com/xxx" target="new")
-            i.fab.fa-twitter
-        li.item
-          a.link(href="https://www.facebook.com/xxx" target="new")
-            i.fab.fa-facebook-square
-        li.item
-          a.link(href="https://instagram.com/xxx" target="new")
-            i.fab.fa-instagram
-        li.item
-          a.link(href="https://www.youtube.com/channel/xxx" target="new")
-            i.fab.fa-youtube
+.contact
+  .contact-wrapper.container
+    .row
+      .offset-lg-3.offset-md-2.col-lg-6.col-md-8
+        form.contact-form(@submit="sendMail")
+          .form-group
+            label.sr-only(for="inputName") Name
+            input#inputName.form-control(
+              type="text",
+              placeholder="Name",
+              name="inputName",
+              v-model="contactForm.name",
+              required
+            )
+          .form-group
+            label.sr-only(for="inputEmail") E-mail
+            input#inputEmail.form-control(
+              type="email",
+              placeholder="E-mail",
+              name="inputEmail",
+              v-model="contactForm.email",
+              required
+            )
+          .form-group
+            label.sr-only(for="inputMessage") Message
+            textarea#inputMessage.form-control(
+              placeholder="Message",
+              name="inputMessage",
+              rows="5",
+              v-model="contactForm.message"
+            )
+          .button-area
+            button#submitButton.btn.btn-default.btn-submit(type="submit")
+              i.fas.fa-check.mr-2
+              | SUBMIT
+    ul.social-links
+      li.item
+        a.link(href="https://twitter.com/xxx", target="new")
+          i.fab.fa-twitter
+      li.item
+        a.link(href="https://www.facebook.com/xxx", target="new")
+          i.fab.fa-facebook-square
+      li.item
+        a.link(href="https://instagram.com/xxx", target="new")
+          i.fab.fa-instagram
+      li.item
+        a.link(href="https://www.youtube.com/channel/xxx", target="new")
+          i.fab.fa-youtube
 </template>
 
 <script>
@@ -62,8 +56,8 @@ export default {
       contactForm: {
         name: "",
         email: "",
-        message: ""
-      }
+        message: "",
+      },
     };
   },
   methods: {
@@ -91,8 +85,8 @@ export default {
     },
     resetForm() {
       this.contactForm = { name: "", email: "", message: "" };
-    }
-  }
+    },
+  },
 };
 </script>
 
