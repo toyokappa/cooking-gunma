@@ -3,7 +3,7 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.header-nav
   nav.container
     n-link.navbar-brand(to="/")
       i.fas.fa-angle-double-left.mr-2
-      span Back to
+      span.mr-2 Back to
       strong Cooking Gunma's Site
 </template>
 

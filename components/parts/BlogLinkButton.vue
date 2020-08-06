@@ -2,7 +2,7 @@
 .blog-link-button
   .container
     n-link.blog-link(to="/blogs")
-      span Go to
+      span.mr-2 Go to
       strong Cooking Gunma's Blog
       i.fas.fa-angle-double-right.ml-2
 </template>
